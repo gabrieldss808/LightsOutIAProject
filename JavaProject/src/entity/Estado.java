@@ -45,35 +45,35 @@ public class Estado {
     }
 
     public boolean isObjetivo() {
+
         return this.Tabuleiro3_3.equals(EspacoDeEstados.OBJETIVO.Tabuleiro3_3);
     }
 
-//    public void fazerAcao(Acao acao) {
-//        this.acoes.add(acao);
-//        this.Tabuleiro3_3.fazerAcao(acao);
-//    }
+   public void fazerAcao(Acao acao) {
+        this.acoes.add(acao);
+        this.Tabuleiro3_3.fazerAcao(acao);
+    }
 
-//    public Collection<Estado> geraFilhos(){
-//
-//        Collection<Estado> filhos = new ArrayList<>();
-//        for(Acao acao: Acao.values()) {
-////			System.out.println("testado a acao " + acao);
-////			System.out.println("resultando em " + this.Tabuleiro3_3.isAcaoValida(acao));
-//            if(this.Tabuleiro3_3.isAcaoValida(acao)) {
-//                Estado filho = this.deepCopy();
-//                filho.fazerAcao(acao);
-//                filhos.add(filho);
-//            }
-//        }
-//
-//
-//        return filhos;
-//    }
+    public Collection<Estado> geraFilhos(){
 
-    //public Estado deepCopy() {
-    //    List<Acao> novasAcoes = new LinkedList<>(this.acoes);
-    //    return new Estado(this.Tabuleiro3_3.deepCopy(), novasAcoes);
-    //}
+        Collection<Estado> filhos = new ArrayList<>();
+        for(Acao acao: Acao.values()) {
+			System.out.println("testado a acao " + acao);
+			System.out.println("resultando em " + this.Tabuleiro3_3.isAcaoValida(acao));
+            if(this.Tabuleiro3_3.isAcaoValida(acao)) {
+                Estado filho = this.deepCopy();
+                filho.fazerAcao(acao);
+                filhos.add(filho);
+            }
+        }
+
+        return filhos;
+    }
+
+    public Estado deepCopy() {
+        List<Acao> novasAcoes = new LinkedList<>(this.acoes);
+        return new Estado(this.Tabuleiro3_3.deepCopy(), novasAcoes);
+    }
 
 
     @Override
@@ -96,7 +96,7 @@ public class Estado {
         if (Tabuleiro3_3 == null) {
             if (other.Tabuleiro3_3 != null)
                 return false;
-        } else if (!Tabuleiro3_3.equals(other.Tabuleiro3_3))
+        } else if (!Tabuleiro3_3.toString().equals(other.Tabuleiro3_3.toString()))
             return false;
         return true;
     }
@@ -106,7 +106,7 @@ public class Estado {
         String res = "";
         res += "nivel: " + this.acoes.size() + "\n";
         res += this.Tabuleiro3_3 + "\n";
-        for(Acao acao: this.acoes) {
+        for (Acao acao : this.acoes) {
             res += acao + ", ";
         }
         res += "\n";

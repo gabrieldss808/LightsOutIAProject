@@ -10,6 +10,11 @@ public class Tabuleiro3_3 {
         this.lampadas = aLampadas;
     }
 
+    public boolean isAcaoValida(Acao acao) {
+
+        return true;
+    }
+
     @Override
     public boolean equals(Object o) {
 
@@ -117,6 +122,7 @@ public class Tabuleiro3_3 {
     }
 
     public Tabuleiro3_3 deepCopy() {
+<<<<<<< HEAD
         int[][] novaLampada = new int[Tabuleiro3_3.N][Tabuleiro3_3.N];
         for(int i=0; i<Tabuleiro3_3.N; i++) {
             for(int j=0; j<Tabuleiro3_3.N; j++) {
@@ -124,6 +130,15 @@ public class Tabuleiro3_3 {
             }
         }
         return new Tabuleiro3_3(novaLampada);
+=======
+        int[][] novasPecas = new int[Tabuleiro3_3.N][Tabuleiro3_3.N];
+        for(int i=0; i<Tabuleiro3_3.N; i++) {
+            for(int j=0; j<Tabuleiro3_3.N; j++) {
+                novasPecas[i][j] = this.lampadas[i][j];
+            }
+        }
+        return new Tabuleiro3_3(novasPecas);
+>>>>>>> 9897cffcf0ecc0ee53ecb1f479a41a517f9182c4
     }
 
     @Override
