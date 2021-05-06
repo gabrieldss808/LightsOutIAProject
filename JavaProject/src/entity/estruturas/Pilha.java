@@ -8,6 +8,10 @@ public class Pilha implements EstadosAbertos{
 	
 	private Stack<Estado> elementos = new Stack<>();
 
+	public void add(int index, Estado estado){
+		this.elementos.add(index,estado);
+	}
+
 	@Override
 	public void push(Estado estado) {
 		this.elementos.push(estado);

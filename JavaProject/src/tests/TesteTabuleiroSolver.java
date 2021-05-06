@@ -10,7 +10,7 @@ import entity.estruturas.Fila;
 public class TesteTabuleiroSolver {
     public static void main(String[] args) {
 
-        Tabuleiro3_3 t = InputInstance.getInstance("files/inst_3_0002.in");
+        Tabuleiro3_3 t = InputInstance.getInstance("files/inst_3_0003.in");
         Estado e = new Estado(t);
         System.out.println("Começando com o estado ");
         System.out.println(e);

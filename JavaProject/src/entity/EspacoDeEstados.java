@@ -1,9 +1,9 @@
 package entity;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
+
 import entity.estruturas.EstadosAbertos;
+import entity.estruturas.Pilha;
 
 public class EspacoDeEstados {
 	
@@ -43,7 +43,11 @@ public class EspacoDeEstados {
 			 Collection<Estado> filhos = e.geraFilhos();
 			 for(Estado filho: filhos) {
 				 if(!estadosFechados.contains(filho))
-					 estadosAbertos.push(filho);
+				 	if(filho.Tabuleiro3_3.NumberOfZeros() > e.Tabuleiro3_3.NumberOfZeros()){
+						estadosAbertos.push(filho);
+					}else{
+						estadosAbertos.add(0,filho);
+					}
 			 }
 		 }
 		 

@@ -58,7 +58,7 @@ public class Tabuleiro3_3 {
                 this.lampadas[1][0] = inverteEstado(lampada_1_0);
                 break;
             case CLICAR_0_1:
-                this.lampadas[0][1] = inverteEstado(lampada_0_0);
+                this.lampadas[0][1] = inverteEstado(lampada_0_1);
                 this.lampadas[0][2] = inverteEstado(lampada_0_2);
                 this.lampadas[1][1] = inverteEstado(lampada_1_1);
                 this.lampadas[0][0] = inverteEstado(lampada_0_0);
@@ -129,6 +129,22 @@ public class Tabuleiro3_3 {
             }
         }
         return new Tabuleiro3_3(novasPecas);
+    }
+
+    public int NumberOfZeros(){
+
+        int NumerOfZeros = 0;
+
+        for(int i = 0; i< Tabuleiro3_3.N; i++) {
+            for(int j = 0; j< Tabuleiro3_3.N; j++) {
+
+                if(this.lampadas[i][j] == 0){
+                    NumerOfZeros++;
+                }
+            }
+        }
+
+        return NumerOfZeros;
     }
 
     @Override
