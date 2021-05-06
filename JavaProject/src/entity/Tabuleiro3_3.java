@@ -115,6 +115,17 @@ public class Tabuleiro3_3 {
         }
         return valor;
     }
+
+    public Tabuleiro3_3 deepCopy() {
+        int[][] novaLampada = new int[Tabuleiro3_3.N][Tabuleiro3_3.N];
+        for(int i=0; i<Tabuleiro3_3.N; i++) {
+            for(int j=0; j<Tabuleiro3_3.N; j++) {
+                novaLampada[i][j] = this.lampadas[i][j];
+            }
+        }
+        return new Tabuleiro3_3(novaLampada);
+    }
+
     @Override
     public String toString() {
         String res = "";
