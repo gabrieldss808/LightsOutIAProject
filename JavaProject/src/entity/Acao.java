@@ -1,3 +1,3 @@
 package entity;
 
-public enum Acao {CLICAR}
+public enum Acao {CLICAR_0_0, CLICAR_0_1, CLICAR_0_2, CLICAR_1_0, CLICAR_1_1, CLICAR_1_2, CLICAR_2_0, CLICAR_2_1, CLICAR_2_2 }
