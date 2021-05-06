@@ -22,15 +22,8 @@ public class Estado {
     }
 
     public boolean isObjetivo() {
-<<<<<<< HEAD
 
-        if (this.equals(EspacoDeEstados.OBJETIVO))
-            return true;
-        return false;
-
-=======
         return this.Tabuleiro3_3.equals(EspacoDeEstados.OBJETIVO.Tabuleiro3_3);
->>>>>>> e6c3ceefb02c366a5c88107b05ca85020e65a7bb
     }
 
    public void fazerAcao(Acao acao) {
@@ -50,7 +43,6 @@ public class Estado {
                 filhos.add(filho);
             }
         }
-
 
         return filhos;
     }

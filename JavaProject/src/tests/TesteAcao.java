@@ -8,7 +8,7 @@ import entity.Tabuleiro3_3;
 
 public class TesteAcao {
     public static void main(String[] args) {
-        Tabuleiro3_3 t = InputInstance.getInstance("C:/Users/Romano/Desktop/Trabalho/lightsout/LightsOutIAProject/JavaProject/files/inst_3_0002.in");
+        Tabuleiro3_3 t = InputInstance.getInstance("files/inst_3_0002.in");
         Estado e = new Estado(t);
         System.out.println("estado inst01 eh objetivo?");
         System.out.println(e);

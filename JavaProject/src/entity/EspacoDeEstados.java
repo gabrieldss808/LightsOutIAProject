@@ -29,7 +29,7 @@ public class EspacoDeEstados {
 	}
 	 
 	 public Estado solve() {
-		 
+
 		 while(estadosAbertos.size()>0) {
 			 Estado e = estadosAbertos.pop();
 			 System.out.println("TESTANDO ESTADO");
@@ -40,11 +40,11 @@ public class EspacoDeEstados {
 				 return e;
 			 }
 			 estadosFechados.add(e);
-//			 Collection<Estado> filhos = e.geraFilhos();
-//			 for(Estado filho: filhos) {
-//				 if(!estadosFechados.contains(filho))
-//					 estadosAbertos.push(filho);
-//			 }
+			 Collection<Estado> filhos = e.geraFilhos();
+			 for(Estado filho: filhos) {
+				 if(!estadosFechados.contains(filho))
+					 estadosAbertos.push(filho);
+			 }
 		 }
 		 
 		 System.out.println("nao encontrou solucao");

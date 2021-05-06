@@ -10,30 +10,9 @@ public class Tabuleiro3_3 {
         this.lampadas = aLampadas;
     }
 
-    public void fazerAcao(Acao acao) {
-        Posicao p0 = getPosicaoZero();
-        Posicao posicaoPeca = null;
-        switch (acao) {
-            case CIMA:     posicaoPeca = new Posicao(p0.linha-1, p0.coluna  ); break;
-            case DIREITA:  posicaoPeca = new Posicao(p0.linha  , p0.coluna+1); break;
-            case BAIXO:    posicaoPeca = new Posicao(p0.linha+1, p0.coluna  ); break;
-            case ESQUERDA: posicaoPeca = new Posicao(p0.linha  , p0.coluna-1); break;
-            default:
-                break;
-        }
-        int peca = this.pecas[posicaoPeca.linha][posicaoPeca.coluna];
-        this.pecas[p0.linha][p0.coluna] = peca;
-        this.pecas[posicaoPeca.linha][posicaoPeca.coluna] = 0;
-    }
+    public boolean isAcaoValida(Acao acao) {
 
-    public Tabuleiro deepCopy() {
-        int[][] novoPecas = new int[Tabuleiro.N][Tabuleiro.N];
-        for(int i=0; i<Tabuleiro.N; i++) {
-            for(int j=0; j<Tabuleiro.N; j++) {
-                novoPecas[i][j] = this.pecas[i][j];
-            }
-        }
-        return new Tabuleiro(novoPecas);
+        return true;
     }
 
     @Override
@@ -141,6 +120,17 @@ public class Tabuleiro3_3 {
         }
         return valor;
     }
+
+    public Tabuleiro3_3 deepCopy() {
+        int[][] novasPecas = new int[Tabuleiro3_3.N][Tabuleiro3_3.N];
+        for(int i=0; i<Tabuleiro3_3.N; i++) {
+            for(int j=0; j<Tabuleiro3_3.N; j++) {
+                novasPecas[i][j] = this.lampadas[i][j];
+            }
+        }
+        return new Tabuleiro3_3(novasPecas);
+    }
+
     @Override
     public String toString() {
         String res = "";
