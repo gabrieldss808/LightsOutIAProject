@@ -21,6 +21,29 @@ public class Estado {
 
     }
 
+    public void fazerAcao(Acao acao) {
+        this.acoes.add(acao);
+        this.Tabuleiro3_3.fazerAcao(acao);
+    }
+
+    public Collection<Estado> geraFilhos(){
+
+        Collection<Estado> filhos = new ArrayList<>();
+        for(Acao acao: Acao.values()) {
+//			System.out.println("testado a acao " + acao);
+//			System.out.println("resultando em " + this.tabuleiro.isAcaoValida(acao));
+                Estado filho = this.deepCopy();
+                filho.fazerAcao(acao);
+                filhos.add(filho);
+        }
+        return filhos;
+    }
+
+    public Estado deepCopy() {
+        List<Acao> novasAcoes = new LinkedList<>(this.acoes);
+        return new Estado(this.Tabuleiro3_3.deepCopy(), novasAcoes);
+    }
+
     public boolean isObjetivo() {
 
         return this.Tabuleiro3_3.equals(EspacoDeEstados.OBJETIVO.Tabuleiro3_3);
