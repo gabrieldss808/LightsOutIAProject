@@ -7,14 +7,24 @@ import entity.estruturas.Pilha;
 
 public class EspacoDeEstados {
 	
-	 public static final Estado OBJETIVO = new Estado(
-			 new Tabuleiro3_3(
+	 public static final Estado OBJETIVO3_3 = new Estado(
+			 new Tabuleiro(
 					 new int[][]{
 						 {0,0,0},
 						 {0,0,0},
 						 {0,0,0}
 						 }
-					 ));
+					 ,3));
+
+	public static final Estado OBJETIVO4_4 = new Estado(
+			new Tabuleiro(
+					new int[][]{
+							{0,0,0,0},
+							{0,0,0,0},
+							{0,0,0,0},
+							{0,0,0,0}
+					}
+					,4));
 	 
 	 Estado inicial;
 	 EstadosAbertos estadosAbertos;
@@ -43,7 +53,7 @@ public class EspacoDeEstados {
 			 Collection<Estado> filhos = e.geraFilhos();
 			 for(Estado filho: filhos) {
 				 if(!estadosFechados.contains(filho))
-				 	if(filho.Tabuleiro3_3.NumberOfZeros() > e.Tabuleiro3_3.NumberOfZeros()){
+				 	if(filho.Tabuleiro.NumberOfZeros() > e.Tabuleiro.NumberOfZeros()){
 						estadosAbertos.push(filho);
 					}else{
 						estadosAbertos.add(0,filho);

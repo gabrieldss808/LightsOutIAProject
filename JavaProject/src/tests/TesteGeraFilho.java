@@ -2,16 +2,16 @@ package tests;
 
 import DAO.InputInstance;
 import entity.Estado;
-import entity.Tabuleiro3_3;
+import entity.Tabuleiro;
 
 import java.util.Collection;
 
 public class TesteGeraFilho {
 
     public static void main(String[] args) {
-        Tabuleiro3_3 t = InputInstance.getInstance("files/inst_3_0004.in");
+        Tabuleiro t = InputInstance.getInstance("files/inst_3_0004.in");
         Estado e = new Estado(t);
-        Tabuleiro3_3 tO = InputInstance.getInstance("files/inst_3_0000.in");
+        Tabuleiro tO = InputInstance.getInstance("files/inst_3_0000.in");
         Estado eO = new Estado(tO);
 
         System.out.println("estado original");

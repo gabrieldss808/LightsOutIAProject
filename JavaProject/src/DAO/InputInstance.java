@@ -7,13 +7,13 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 
-import entity.Tabuleiro3_3;
+import entity.Tabuleiro;
 
 public class InputInstance {
 
-    public static Tabuleiro3_3 getInstance(String file) {
+    public static Tabuleiro getInstance(String file) {
 
-        Tabuleiro3_3 tabuleiro = null;
+        Tabuleiro tabuleiro = null;
 
         InputStream is;
         InputStreamReader isr;
@@ -26,23 +26,17 @@ public class InputInstance {
             br = new BufferedReader(isr);
             String line;
 
-            int tabulareiroType = Integer.parseInt(br.readLine());
+            int TabuleiroType = Integer.parseInt(br.readLine());
 
-            if(tabulareiroType == 3){
-                int[][] lampadas = new int[Tabuleiro3_3.N][Tabuleiro3_3.N];
-                for(int i = 0; i< Tabuleiro3_3.N; i++) {
-                    line = br.readLine();
-                    String[] valores = line.split(" ");
-                    for(int j = 0; j< Tabuleiro3_3.N; j++) {
-                        lampadas[i][j] = Integer.parseInt(valores[j]);
-                    }
+            int[][] lampadas = new int[TabuleiroType][TabuleiroType];
+            for(int i = 0; i< TabuleiroType; i++) {
+                line = br.readLine();
+                String[] valores = line.split(" ");
+                for(int j = 0; j< TabuleiroType; j++) {
+                    lampadas[i][j] = Integer.parseInt(valores[j]);
                 }
-                tabuleiro = new Tabuleiro3_3(lampadas);
-            }else
-            {
-                System.out.println("Em breve novo tabuleiro");
             }
-
+            tabuleiro = new Tabuleiro(lampadas,TabuleiroType);
 
         }catch(IOException e) {
             e.printStackTrace();
