@@ -1,6 +1,8 @@
 package entity.estruturas;
 
 import entity.Estado;
+
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -11,6 +13,11 @@ public class Fila implements EstadosAbertos{
 	@Override
 	public void add(int index, Estado estado) {
 		this.elementos.add(estado);
+	}
+
+	@Override
+	public void addAll(Collection<Estado> Estados) {
+		this.elementos.addAll(Estados);
 	}
 
 	@Override

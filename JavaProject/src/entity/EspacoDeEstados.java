@@ -26,19 +26,23 @@ public class EspacoDeEstados {
 					}
 					,4));
 	 
-	 Estado inicial;
-	 EstadosAbertos estadosAbertos;
-	 Set<Estado> estadosFechados;
+ 	Estado inicial;
+ 	EstadosAbertos estadosAbertos;
+ 	Set<Estado> estadosFechados;
+	Set<Estado> estadoTemporarios;
 
 	 public EspacoDeEstados(Estado aInicial, EstadosAbertos aEstruturaAbertos) {
 		 this.inicial = aInicial;
 		 this.estadosAbertos = aEstruturaAbertos;
 		 estadosAbertos.push(this.inicial);
 		 estadosFechados = new HashSet<>();
+		 estadoTemporarios = new HashSet<>();
 		 
 	}
 	 
 	 public Estado solve() {
+
+	 	int numerOfTests = 0;
 
 		 while(estadosAbertos.size()>0) {
 			 Estado e = estadosAbertos.pop();
@@ -50,18 +54,23 @@ public class EspacoDeEstados {
 				 return e;
 			 }
 			 estadosFechados.add(e);
+			 numerOfTests++;
+
 			 Collection<Estado> filhos = e.geraFilhos();
 			 for(Estado filho: filhos) {
-				 if(!estadosFechados.contains(filho))
-				 	if(filho.Tabuleiro.NumberOfZeros() > e.Tabuleiro.NumberOfZeros()){
-						estadosAbertos.push(filho);
-					}else{
-						estadosAbertos.add(0,filho);
-					}
+				 if(!estadosFechados.contains(filho) && filho.acoes.size() <= 3){
+				 	estadosAbertos.add(0,filho);
+				 }
 			 }
+
+			 /*if(estadosAbertos.size() == 0){
+			 	estadosAbertos.addAll(estadoTemporarios);
+			 	estadoTemporarios.removeAll(estadoTemporarios);
+			 }*/
 		 }
 		 
 		 System.out.println("nao encontrou solucao");
+		 System.out.println("Numero de Testes: " + numerOfTests);
 		 
 		 return null;
 	 }

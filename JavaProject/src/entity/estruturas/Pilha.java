@@ -2,12 +2,19 @@ package entity.estruturas;
 
 import entity.Estado;
 
+import java.util.Collection;
 import java.util.Stack;
 
 public class Pilha implements EstadosAbertos{
 	
 	private Stack<Estado> elementos = new Stack<>();
 
+	@Override
+	public void addAll(Collection<Estado> Estados) {
+		this.elementos.addAll(Estados);
+	}
+
+	@Override
 	public void add(int index, Estado estado){
 		this.elementos.add(index,estado);
 	}

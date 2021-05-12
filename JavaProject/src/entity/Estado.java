@@ -58,7 +58,13 @@ public class Estado {
         boolean retorno = false;
 
         if(acao.toString().contains("Tab4") && this.Tabuleiro.N == 4){
-            retorno = true;
+            if(this.acoes.size() > 0){
+                if(this.acoes.get(this.acoes.size()-1) != acao){
+                    retorno = true;
+                }
+            }else if(this.acoes.size() == 0){
+                retorno = true;
+            }
         }
         if(!acao.toString().contains("Tab4") && this.Tabuleiro.N == 3){
             retorno = true;
