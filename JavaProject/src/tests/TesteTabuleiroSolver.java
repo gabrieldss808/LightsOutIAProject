@@ -10,7 +10,7 @@ public class TesteTabuleiroSolver {
     public static void main(String[] args) {
         Tabuleiro t = null;
 
-        t = InputInstance.getInstance("files/inst_4_0176.in");
+        t = InputInstance.getInstance("C:/Users/Romano/Desktop/Trabalho/lightsout/LightsOutIAProject/JavaProject/files/inst_4_0093.res");
 
         Estado e = new Estado(t);
         System.out.println("Começando com o estado ");

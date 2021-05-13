@@ -19,11 +19,11 @@ public enum Acao {
     Tab4CLICAR_3_1,
     Tab4CLICAR_3_0,
     Tab4CLICAR_2_3,
-    /*Tab4CLICAR_2_2,*/
-    /*Tab4CLICAR_2_1,*/
+    Tab4CLICAR_2_2,
+    Tab4CLICAR_2_1,
     Tab4CLICAR_2_0,
     Tab4CLICAR_1_3,
-    /*Tab4CLICAR_1_2,*/
-    /*Tab4CLICAR_1_1,*/
+    Tab4CLICAR_1_2,
+    Tab4CLICAR_1_1,
     Tab4CLICAR_1_0,
 }

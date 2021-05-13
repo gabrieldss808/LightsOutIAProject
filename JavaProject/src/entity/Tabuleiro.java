@@ -155,7 +155,7 @@ public class Tabuleiro {
                     this.lampadas[1][1] = inverteEstado(lampada_1_1);
                     this.lampadas[2][0] = inverteEstado(lampada_2_0);
                     break;
-                /*case Tab4CLICAR_1_1:
+                case Tab4CLICAR_1_1:
                     this.lampadas[1][1] = inverteEstado(lampada_1_1);
                     this.lampadas[0][1] = inverteEstado(lampada_0_1);
                     this.lampadas[1][2] = inverteEstado(lampada_1_2);
@@ -168,7 +168,7 @@ public class Tabuleiro {
                     this.lampadas[1][3] = inverteEstado(lampada_1_3);
                     this.lampadas[2][2] = inverteEstado(lampada_2_2);
                     this.lampadas[1][1] = inverteEstado(lampada_1_1);
-                    break;*/
+                    break;
                 case Tab4CLICAR_1_3:
                     this.lampadas[1][3] = inverteEstado(lampada_1_3);
                     this.lampadas[0][3] = inverteEstado(lampada_0_3);
@@ -181,7 +181,7 @@ public class Tabuleiro {
                     this.lampadas[2][1] = inverteEstado(lampada_2_1);
                     this.lampadas[3][0] = inverteEstado(lampada_3_0);
                     break;
-                /*ase Tab4CLICAR_2_1:
+                case Tab4CLICAR_2_1:
                     this.lampadas[2][1] = inverteEstado(lampada_2_1);
                     this.lampadas[1][1] = inverteEstado(lampada_1_1);
                     this.lampadas[2][2] = inverteEstado(lampada_2_2);
@@ -194,7 +194,7 @@ public class Tabuleiro {
                     this.lampadas[2][3] = inverteEstado(lampada_2_3);
                     this.lampadas[3][2] = inverteEstado(lampada_3_2);
                     this.lampadas[2][1] = inverteEstado(lampada_2_1);
-                    break;*/
+                    break;
                 case Tab4CLICAR_2_3:
                     this.lampadas[2][3] = inverteEstado(lampada_2_3);
                     this.lampadas[1][3] = inverteEstado(lampada_1_3);

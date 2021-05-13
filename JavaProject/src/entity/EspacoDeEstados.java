@@ -58,15 +58,10 @@ public class EspacoDeEstados {
 
 			 Collection<Estado> filhos = e.geraFilhos();
 			 for(Estado filho: filhos) {
-				 if(!estadosFechados.contains(filho) && filho.acoes.size() <= 3){
+				 if(!estadosFechados.contains(filho) || !estadosAbertos.conteins(filho)){
 				 	estadosAbertos.add(0,filho);
 				 }
 			 }
-
-			 /*if(estadosAbertos.size() == 0){
-			 	estadosAbertos.addAll(estadoTemporarios);
-			 	estadoTemporarios.removeAll(estadoTemporarios);
-			 }*/
 		 }
 		 
 		 System.out.println("nao encontrou solucao");

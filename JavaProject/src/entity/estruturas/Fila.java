@@ -35,4 +35,7 @@ public class Fila implements EstadosAbertos{
 		return elementos.size();
 	}
 
+	@Override
+	public boolean conteins(Estado estado){return  this.elementos.contains(estado);}
+
 }

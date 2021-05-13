@@ -33,7 +33,7 @@ public class Pilha implements EstadosAbertos{
 	public int size() {
 		return this.elementos.size();
 	}
-	
-	
+
+	public boolean conteins(Estado estado){return  this.elementos.contains(estado);}
 
 }

@@ -43,7 +43,6 @@ public class Estado {
         for(Acao acao: Acao.values()) {
 
             if(isValidaAcao(acao)){
-                /*System.out.println("testado a acao " + acao);*/
                 Estado filho = this.deepCopy();
                 filho.fazerAcao(acao);
                 filhos.add(filho);

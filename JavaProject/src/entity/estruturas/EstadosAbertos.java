@@ -13,5 +13,6 @@ public interface EstadosAbertos {
     public int size();
     public void add(int index,Estado estado);
     public void addAll(Collection<Estado> estados);
+    boolean conteins(Estado estado);
 }
 
