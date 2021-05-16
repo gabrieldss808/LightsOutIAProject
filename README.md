@@ -49,6 +49,7 @@ Gabriel Romano Orlando   RA: N420111
 Victoria Deorio Silva    RA: F0378B2
 Vanderlei Toscano Junior RA: D9327I8
 Gabriel Da Silva Souza   RA: D9152F5
+Caio Iorio de Mello Azevedo RA: C4541E9
 ```
 
 ## License
